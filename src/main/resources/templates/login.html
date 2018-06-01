@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Insert title here</title>
+</head>
+<body>
+<div align="center" style="margin-top: 100px">
+	<form action="/login" method="post">
+		<table>
+			<tr>
+				<td>账号</td>
+				<td><input type="text" placeholder="username" name="username" value="aa"/> </td>
+			</tr>
+			<tr>
+				<td>密码</td>
+				<td><input type="password" placeholder="password" name="password" value="aa"/> </td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center"><input name="submit" type="submit" value="login" /> </td>
+			</tr>
+		</table>
+		<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"	th:if="${_csrf}"/>
+		
+	</form>
+	
+</div>
+	
+</body>
+</html>
