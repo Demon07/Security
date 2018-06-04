@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
@@ -19,6 +19,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 			throws Exception {
 		auth.inMemoryAuthentication().withUser("aa").password("aa")// 在内存中设置用户名和密码
 				.roles("USER");//级别设置为user
+		
+		auth.inMemoryAuthentication().withUser("bb").password("bb")// 在内存中设置用户名和密码
+		.roles("ADMIN");//级别设置为admin
 	}
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests().anyRequest().authenticated()// 所有的url都需要认证
